@@ -69,16 +69,19 @@ int secondLargest(int arr[], int n) {
     if (n < 2) return -1;
 
     int largest = INT_MIN, second = INT_MIN;
+    bool foundSecond = false;
 
     for (int i = 0; i < n; i++) {
         if (arr[i] > largest) {
             second = largest;
             largest = arr[i];
         }
-        else if (arr[i] > second && arr[i] != largest) {
+        else if (arr[i] < largest && arr[i] > second) {
             second = arr[i];
+            foundSecond = true;
         }
     }
 
-    return (second == INT_MIN) ? -1 : second;
+    return foundSecond ? second : -1;
 }
+
