@@ -24,9 +24,10 @@ return maxSum;
 
 //optimal kadanes algorithm
 
+
 int maxSubArray(int arr[],int n){
 
-
+ 
 int currentSum=0;
 int maxSum = INT_MIN;
 
