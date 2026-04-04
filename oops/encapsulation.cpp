@@ -27,3 +27,45 @@ int main() {
 
     return 0;
 }
+
+
+
+//product example
+
+
+class Product {
+private:
+    int price;
+
+public:
+    void setPrice(int p) {
+        if (p > 0)
+            price = p;
+    }
+
+    int getPrice() {
+        return price;
+    }
+
+    void applyDiscount(int percent) {
+        price = price - (price * percent / 100);
+    }
+};
+
+
+
+//Protected Modifier
+
+
+
+class Base {
+protected:
+    int x;
+};
+
+class Derived : public Base {
+public:
+    void setX() {
+        x = 10; // allowed
+    }
+};
